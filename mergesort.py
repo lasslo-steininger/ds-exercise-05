@@ -48,7 +48,13 @@ my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 
 # Plot the unsorted list
 x = range(len(my_list))
-plt.plot(x, my_list)
+fig, ax = plt.subplots()
+rects = ax.bar(x, my_list)
+ax.set_title("Unsorted List")
+ax.set_xlabel("Index")
+ax.set_ylabel("Value")
+ax.set_xticks(x)
+ax.bar_label(rects, padding=1)
 plt.show()
 
 # Sort the list
@@ -56,5 +62,11 @@ merge_sort(my_list)
 
 # Plot the sorted list
 x = range(len(my_list))
-plt.plot(x, my_list)
+fig, ax = plt.subplots()
+rects = ax.bar(x, my_list)
+ax.set_title("Sorted List")
+ax.set_xlabel("Index")
+ax.set_ylabel("Value")
+ax.set_xticks(x)
+ax.bar_label(rects, padding=1)
 plt.show()
